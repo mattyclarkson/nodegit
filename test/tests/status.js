@@ -16,7 +16,7 @@ describe("Status", function() {
 
   beforeEach(function() {
     var test = this;
-    delete test.repository;
+    
     return Repository.open(reposPath)
       .then(function(repository) {
         test.repository = repository;
