@@ -129,7 +129,7 @@ module.exports = function generateNativeCode() {
 
     utils.writeFile("../lib/enums.js", beautify(templates.enums.render(enabled)));
   }).then(function() {
-    return exec("command -v astyle").then(function(astyle) {
+    return exec("where astyle").then(function(astyle) {
       if (astyle) {
         return exec(
           "astyle --options=\".astylerc\" "
